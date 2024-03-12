@@ -1,12 +1,13 @@
 const { resolve } = require("path")
-
+const { nextLintConfig } = require("@dvisign/ibj-eslint-config")
 /** @type {import("eslint").Linter.Config} */
 module.exports = {
   root: true,
-  extends: ["../eslint-config/next.js"],
+  ...nextLintConfig,
   parser: "@typescript-eslint/parser",
   parserOptions: {
-    project: true,
+    ...nextLintConfig.parserOptions,
+    project: resolve(__dirname, "tsconfig.json"),
   },
   env: {
     node: true, // Node.js 환경 활성화

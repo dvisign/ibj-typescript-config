@@ -5,9 +5,9 @@
     "allowJs": true,
     "module": "ES6",
     "noEmit": false,
-    "declaration": true,
+    "declaration": true
   },
-  "include": ["index.ts", "./.eslintrc.js", "rollup.config.js"],
+  "include": ["src/index.ts", "./.eslintrc.js", "rollup.config.mjs"],
   "exclude": ["node_modules"],
   "ignorePattern": ["dist/*"]
 }

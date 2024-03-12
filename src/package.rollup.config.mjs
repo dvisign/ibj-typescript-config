@@ -1,9 +1,9 @@
-import { nodeResolve } from "@rollup/plugin-node-resolve"
-import commonjs from "@rollup/plugin-commonjs"
-import typescript from "@rollup/plugin-typescript"
-import json from "@rollup/plugin-json"
-import { terser } from "rollup-plugin-terser"
-import copy from "rollup-plugin-copy"
+import { nodeResolve } from "@rollup/plugin-node-resolve";
+import commonjs from "@rollup/plugin-commonjs";
+import typescript from "@rollup/plugin-typescript";
+import json from "@rollup/plugin-json";
+import { terser } from "rollup-plugin-terser";
+import copy from "rollup-plugin-copy";
 
 const rollupConfig = {
   input: "packages/typescript-config/index.ts", // 가정된 시작점
@@ -17,7 +17,10 @@ const rollupConfig = {
     nodeResolve(),
     commonjs(),
     json(),
-    typescript({ tsconfig: "./packages/typescript-config/tsconfig.json", outDir: "dist/typescript-config" }),
+    typescript({
+      tsconfig: "./packages/typescript-config/tsconfig.json",
+      outDir: "dist/typescript-config",
+    }),
     copy({
       targets: [
         {
@@ -37,6 +40,6 @@ const rollupConfig = {
     process.env.NODE_ENV === "production" && terser(),
   ],
   external: ["path"],
-}
+};
 
-export default rollupConfig
+export default rollupConfig;

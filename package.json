@@ -1,6 +1,6 @@
 {
   "name": "@dvisign/ibj-typescript-config",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "main": "./dist/index.js",
   "files": [
@@ -12,7 +12,10 @@
   },
   "author": "dvisign",
   "exports": {
-    ".": "./dist/index.js"
+    ".": "./dist/index.js",
+    "./next-config.json": "./dist/next-config.json",
+    "./react-library.json": "./dist/react-library.json",
+    "./base.json": "./dist/base.json"
   },
   "scripts": {
     "build": "rollup -c --verbose",
@@ -54,6 +57,7 @@
     "webpack-dev-server": "^5.0.2",
     "webpack-node-externals": "^3.0.0"
   },
-  "peerDependencies": {
+  "dependencies": {
+    "@dvisign/ibj-eslint-config": "^0.0.8"
   }
 }

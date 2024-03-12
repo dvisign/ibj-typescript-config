@@ -4,6 +4,7 @@ import typescript from "@rollup/plugin-typescript"
 import json from "@rollup/plugin-json"
 import { terser } from "rollup-plugin-terser"
 import copy from "rollup-plugin-copy"
+import alias from "@rollup/plugin-alias"
 
 export default {
   input: "./src/index.ts", // 가정된 시작점
@@ -31,6 +32,14 @@ export default {
         {
           src: "./src/react-library.json",
           dest: "dist",
+        },
+      ],
+    }),
+    alias({
+      entries: [
+        {
+          find: "@dvisign/ibj-typescript-config/next-config",
+          replacement: "./dist/next-config.json",
         },
       ],
     }),
