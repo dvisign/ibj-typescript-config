@@ -1,0 +1,13 @@
+{
+  "extends": "./src/base.json",
+  "compilerOptions": {
+    "outDir": "dist",
+    "allowJs": true,
+    "module": "ES6",
+    "noEmit": false,
+    "declaration": true,
+  },
+  "include": ["index.ts", "./.eslintrc.js", "rollup.config.js"],
+  "exclude": ["node_modules"],
+  "ignorePattern": ["dist/*"]
+}
